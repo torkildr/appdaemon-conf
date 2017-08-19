@@ -1,0 +1,4 @@
+secrets.yaml
+.*.swp
+*.json
+__pycache__/

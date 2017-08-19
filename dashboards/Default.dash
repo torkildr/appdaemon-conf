@@ -1,0 +1,15 @@
+#
+# Main arguments, all optional
+#
+title: Default
+widget_dimensions: [120, 120]
+widget_margins: [5, 5]
+columns: 8
+
+weather:
+    widget_type: yr
+ 
+layout:
+    - light.gjesterommet, light.nuppelampa, light.soverommet
+    - weather(6x1)
+
