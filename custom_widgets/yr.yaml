@@ -1,0 +1,13 @@
+widget_type: baseyr
+entity: {{ entity }}
+fields:
+  symbols: ""
+  hours: ""
+  forecast: ""
+parameters: []
+icons: []
+static_icons: []
+css: []
+static_css:
+  widget_style: $light_widget_style
+

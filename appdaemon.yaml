@@ -6,43 +6,46 @@ AppDaemon:
 HASS:
   ha_url: http://localhost:8123
 
-google_calendar:
-  module: ical
-  class: Calendar
-  event: appdaemon.google_calendar
-  feed: !secret gcal_feed
-  interval: 30
-  max_days: 14
-  max_events: 10
+HADashboard:
+  dash_url: http://simon.lan:5050
 
-yr:
-  module: yr
-  class: Yr
-  event: appdaemon.yr
-  source: http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/varsel_time_for_time.xml
-  interval: 30
-
-bysykkel:
-  module: bysykkel
-  class: Bysykkel
-  event: appdaemon.bysykkel
-  interval: 5
-  lat_min: !secret lat_min
-  lat_max: !secret lat_max
-  long_min: !secret long_min
-  long_max: !secret long_max
-
-ruter:
-  module: ruter
-  class: Ruter
-  event: appdaemon.ruter
-  departures: 5
-  interval: 5
-  x_min: !secret x_min
-  x_max: !secret x_max
-  y_min: !secret y_min
-  y_max: !secret y_max
-
+#google_calendar:
+#  module: ical
+#  class: Calendar
+#  event: appdaemon.google_calendar
+#  feed: !secret gcal_feed
+#  interval: 30
+#  max_days: 14
+#  max_events: 10
+#
+#yr:
+#  module: yr
+#  class: Yr
+#  event: appdaemon.yr
+#  source: http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/varsel_time_for_time.xml
+#  interval: 30
+#
+#bysykkel:
+#  module: bysykkel
+#  class: Bysykkel
+#  event: appdaemon.bysykkel
+#  interval: 5
+#  lat_min: !secret lat_min
+#  lat_max: !secret lat_max
+#  long_min: !secret long_min
+#  long_max: !secret long_max
+#
+#ruter:
+#  module: ruter
+#  class: Ruter
+#  event: appdaemon.ruter
+#  departures: 5
+#  interval: 5
+#  x_min: !secret x_min
+#  x_max: !secret x_max
+#  y_min: !secret y_min
+#  y_max: !secret y_max
+#
 monitor:
   module: eventMonitor
   class: Monitor
@@ -61,7 +64,4 @@ cache:
     - appdaemon.yr
     - appdaemon.ruter
     - appdaemon.google_calendar
-
-#HADashboard:
-#  dash_url: http://192.168.1.135:5050
 

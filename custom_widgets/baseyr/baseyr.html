@@ -1,0 +1,31 @@
+<table>
+  <tr class="hours" data-bind="foreach: hours">
+    <td colspan="2">
+      <div>
+        <div class="wind wind-left">
+          <img data-bind="attr: { src: wind1 }" />
+        </div>
+        <div class="hour" data-bind="hour"></div>
+        <div class="wind wind-right">
+          <img data-bind="attr: { src: wind2 }" />
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr class="markers" data-bind="foreach: forecast">
+    <td></td>
+  </tr>
+  <tr class="symbols" data-bind="foreach: symbols">
+    <td data-bind="attr: { colspan: count }">
+      <img data-bind="attr: { src: asset }" />
+    </td>
+  </tr>
+  <tr class="data" data-bind="foreach: forecast">
+    <td>
+      <div>
+        <span class="temp" data-bind="text: temp"></span>
+        <span class="rain" data-bind="text: precip"></span>
+      </div>
+    </td>
+  </tr>
+</table>
