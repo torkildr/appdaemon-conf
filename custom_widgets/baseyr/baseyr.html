@@ -1,5 +1,5 @@
 <script type="text/javascript" src="/javascript/custom/moment.min.js"></script>
-<table>
+<table data-bind="attr: { style: text_style }">
   <tr class="hours" data-bind="foreach: hours">
     <td colspan="2">
       <div>
@@ -14,18 +14,18 @@
     </td>
   </tr>
   <tr class="markers" data-bind="foreach: forecast">
-    <td></td>
+    <td data-bind="attr: { style: $parent.border_style }"></td>
   </tr>
   <tr class="symbols" data-bind="foreach: symbols">
-    <td data-bind="attr: { colspan: count }">
+    <td data-bind="attr: { colspan: count, style: $parent.border_style }">
       <img data-bind="attr: { src: asset }" />
     </td>
   </tr>
   <tr class="data" data-bind="foreach: forecast">
-    <td>
+    <td data-bind="attr: { style: $parent.border_style }">
       <div>
-        <span class="temp" data-bind="text: temp"></span>
-        <span class="rain" data-bind="text: precip"></span>
+        <span class="temp" data-bind="attr: { 'data-temp': temp }"></span>
+        <span class="rain" data-bind="attr: { 'data-rain': precip }"></span>
       </div>
     </td>
   </tr>

@@ -9,5 +9,7 @@ icons: []
 static_icons: []
 css: []
 static_css:
-  widget_style: "background-color: $gray_dark"
+  widget_style: "background: $gray_medium"
+  border_style: "border-color: $gray_dark"
+  text_style: "color: $white"
 

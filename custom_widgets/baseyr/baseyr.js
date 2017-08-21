@@ -3,7 +3,6 @@ function baseyr(widget_id, url, skin, parameters) {
     // the api should probably be changed so this isn't necessary
     self.parameters = parameters;
 
-    // yr stuff
     var symbols = function(forecast) {
         var prev = '';
         var count = 0;
