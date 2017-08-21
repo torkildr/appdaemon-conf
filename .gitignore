@@ -2,3 +2,4 @@ secrets.yaml
 .*.swp
 *.json
 __pycache__/
+compiled/

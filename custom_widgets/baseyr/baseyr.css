@@ -3,7 +3,6 @@ table {
   height: 100%;
   border-spacing: 0;
   table-layout: fixed !important;
-  background-color: $background-color !important;
   font-size: 0.8em;
 }
 
@@ -41,18 +40,21 @@ table {
   height: 0.2em;
   border-style: solid;
   border-width: 0 thin thin 0;
-  border-color: $border-color;
+  border-color: $gray_medium;
 }
 
 .markers td:last-child {
   border-width: 0 0 thin 0;
 }
 
+.symbols {
+}
+
 .symbols td {
   text-align: center;
   border-style: dashed;
   border-width: 0 thin 0 0;
-  border-color: $border-color;
+  border-color: $gray_medium;
 }
 
 .symbols td:last-child {
@@ -62,7 +64,7 @@ table {
 .data td {
   border-style: solid;
   border-width: thin thin 0 0;
-  border-color: $border-color;
+  border-color: $gray_medium;
   text-align: center;
   font-family: sans-serif;
 }

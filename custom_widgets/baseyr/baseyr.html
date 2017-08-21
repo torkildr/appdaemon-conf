@@ -1,3 +1,4 @@
+<script type="text/javascript" src="/javascript/custom/moment.min.js"></script>
 <table>
   <tr class="hours" data-bind="foreach: hours">
     <td colspan="2">
@@ -5,7 +6,7 @@
         <div class="wind wind-left">
           <img data-bind="attr: { src: wind1 }" />
         </div>
-        <div class="hour" data-bind="hour"></div>
+        <div class="hour" data-bind="text: hour"></div>
         <div class="wind wind-right">
           <img data-bind="attr: { src: wind2 }" />
         </div>

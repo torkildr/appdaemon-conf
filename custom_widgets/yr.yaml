@@ -9,5 +9,5 @@ icons: []
 static_icons: []
 css: []
 static_css:
-  widget_style: $light_widget_style
+  widget_style: "background-color: $gray_dark"
 

@@ -65,7 +65,7 @@ function baseyr(widget_id, url, skin, parameters) {
 
         for (var i = 0; i < forecast.length; i += 2) {
             hours.push({
-                hour: forecast[i].from,
+                hour: moment(forecast[i].from).format('HH'),
                 wind1: getWindAsset(forecast[i].windSpeed, forecast[i].windDirection),
                 wind2: getWindAsset(forecast[i+1].windSpeed, forecast[i+1].windDirection),
             });
