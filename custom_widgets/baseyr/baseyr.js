@@ -5,34 +5,34 @@ function baseyr(widget_id, url, skin, parameters) {
 
     // yr stuff
     var symbols = function(forecast) {
-        var prev_symbol = '';
-        var symbol_count = 0;
-        var symbols = [];
+        var prev = '';
+        var count = 0;
+        var symbolCount = [];
 
         var addSymbol = function(name, count) {
-            symbols.push({
+            symbolCount.push({
                 name: name,
                 count: count,
                 asset: self.parameters.assets + '/b48/' + name + '.png',
             });
         };
 
-        Object.keys(forecast).forEach(function(key) {
-            var value = forecast[key];
-            
-            if (prev_symbol == value["symbol"]) {
-                symbol_count++;
+        forecast.forEach(function(value) {
+            if (prev == value['symbol']) {
+                count++;
             } else {
-                if (symbol_count != 0) {
-                    addSymbol(prev_symbol, symbol_count);
+                if (count != 0) {
+                    addSymbol(prev, count);
                 }
             
-                prev_symbol = value["symbol"];
-                symbol_count = 1;
+                prev = value['symbol'];
+                count = 1;
             }
         });
 
-        return symbols;
+        addSymbol(prev, count);
+
+        return symbolCount;
     };
 
     var zeroPad = function(value, length) {
@@ -50,13 +50,13 @@ function baseyr(widget_id, url, skin, parameters) {
     
     var getWindAsset = function(speed, direction) {
         if (parseFloat(speed) <= 0.2) {
-            return "vindstille";
+            return 'vindstille';
         }
         
         var speedAsset = zeroPad(intervalRounded(speed, 2.5) * 10, 4);
         var directionAsset = zeroPad(intervalRounded(direction, 5) % 360, 3);
         
-        var file = "vindpil." + speedAsset + "." + directionAsset;
+        var file = 'vindpil.' + speedAsset + '.' + directionAsset;
         return self.parameters.assets + '/w24/' + file + '.png';
     }
 
@@ -77,17 +77,18 @@ function baseyr(widget_id, url, skin, parameters) {
     // hook up callbacks and widget stuff
     self.onData = function(self, data) {
         var forecast = data.attributes;
-        self.set_field(self, "symbols", symbols(forecast));
-        self.set_field(self, "hours", hours(forecast));
-        self.set_field(self, "forecast", forecast);
+
+        self.set_field(self, 'symbols', symbols(forecast));
+        self.set_field(self, 'hours', hours(forecast));
+        self.set_field(self, 'forecast', forecast);
     };
 
     var callbacks = [];
     var monitored_entities = [
         {
-            "entity": parameters.entity,
-            "initial": self.onData,
-            "update": self.onData,
+            'entity': parameters.entity,
+            'initial': self.onData,
+            'update': self.onData,
         },
     ];
 
