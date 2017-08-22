@@ -1,0 +1,13 @@
+widget_type: basetransport
+entity: {{ entity }}
+fields:
+  data: ""
+parameters: []
+icons: []
+static_icons: []
+css: []
+static_css:
+  widget_style: $background_style
+  platform_style: "background-color: #854141; color: $white;"
+  line_style: "background-color: $gray_light; color: $white;"
+

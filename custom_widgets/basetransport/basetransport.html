@@ -1,0 +1,19 @@
+<script type="text/javascript" src="/javascript/custom/moment.min.js"></script>
+<div class="root">
+    <div class="stop" data-bind="foreach: data">
+        <div class="platform" data-bind="foreach: $data">
+            <p data-bind="text: name, attr: { style: $root.platform_style }"></p>
+            <div class="line" data-bind="foreach: lines">
+                <p data-bind="text: name, attr: { style: $root.line_style }"></p>
+                <div class="departures-wrap">
+                    <div class="departures">
+                        <div class="departure" data-bind="foreach: departures">
+                            <p class="departure-timestamp" data-bind="text: time"></p>
+                            <p class="departure-time"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

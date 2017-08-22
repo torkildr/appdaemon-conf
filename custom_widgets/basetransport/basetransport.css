@@ -1,0 +1,81 @@
+.widget-basetransport-{{id}} .root {
+  display: flex !important;
+  height: 100%;
+  padding: 5px;
+
+  text-align: left !important;
+  flex-direction: column;
+}
+
+.widget-basetransport-{{id}} .stop {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-basetransport-{{id}} .platform {
+  flex-grow: 1;
+}
+
+.widget-basetransport-{{id}} .platform>p {
+  margin: 0;
+  padding: 0.2em;
+  padding-left: 0em;
+  font-size: 0.9em;
+  padding-left: 0.5em;
+}
+
+.widget-basetransport-{{id}} .line>p {
+  display: inline-block;
+  margin: 0em;
+  margin-left: 0.5em;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  font-size: 0.9em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+}
+
+.widget-basetransport-{{id}} .platform {
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-basetransport-{{id}} .line {
+  flex-grow: 1;
+}
+
+.widget-basetransport-{{id}} .departure p {
+  margin: 0em;
+}
+
+.widget-basetransport-{{id}} .departures .departure-time:after {
+  content: ",";
+  padding-right: 0.3em;
+}
+
+.widget-basetransport-{{id}} .departures-wrap {
+  overflow: hidden;
+
+}
+
+.widget-basetransport-{{id}} .departures {
+  margin-left: 0.5em;
+  white-space: nowrap;
+}
+
+.widget-basetransport-{{id}} .departure {
+  display: flex;
+}
+
+.widget-basetransport-{{id}} .departure-timestamp {
+  display: none;
+}
+
+.widget-basetransport-{{id}} .departure-time {
+  margin-right: 1em;
+  font-size: 0.9em;
+}
+
