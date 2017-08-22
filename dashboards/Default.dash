@@ -11,7 +11,14 @@ weather:
   entity: appdaemon.yr
   assets: /images/custom/yr
 
+ruter:
+  widget_type: transport
+  entity: appdaemon.ruter
+
 layout:
-  - light.gjesterommet, light.nuppelampa, light.soverommet
+  - light.gjesterommet, ruter(2x4)
+  - light.nuppelampa
+  - light.soverommet
+  - 
   - weather(6x1)
 

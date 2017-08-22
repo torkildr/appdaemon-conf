@@ -18,13 +18,13 @@ HADashboard:
 #  max_days: 14
 #  max_events: 10
 #
-#yr:
-#  module: yr
-#  class: Yr
-#  event: appdaemon.yr
-#  source: http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/varsel_time_for_time.xml
-#  interval: 30
-#
+yr:
+  module: yr
+  class: Yr
+  event: appdaemon.yr
+  source: http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/varsel_time_for_time.xml
+  interval: 30
+
 #bysykkel:
 #  module: bysykkel
 #  class: Bysykkel
@@ -35,17 +35,17 @@ HADashboard:
 #  long_min: !secret long_min
 #  long_max: !secret long_max
 #
-#ruter:
-#  module: ruter
-#  class: Ruter
-#  event: appdaemon.ruter
-#  departures: 5
-#  interval: 5
-#  x_min: !secret x_min
-#  x_max: !secret x_max
-#  y_min: !secret y_min
-#  y_max: !secret y_max
-#
+ruter:
+  module: ruter
+  class: Ruter
+  event: appdaemon.ruter
+  departures: 5
+  interval: 5
+  x_min: !secret x_min
+  x_max: !secret x_max
+  y_min: !secret y_min
+  y_max: !secret y_max
+
 monitor:
   module: eventMonitor
   class: Monitor
