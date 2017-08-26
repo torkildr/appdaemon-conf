@@ -6,6 +6,21 @@ widget_dimensions: [120, 114]
 widget_margins: [5, 5]
 columns: 8
 
+clock:
+  widget_type: clock
+  time_format: "24hr"
+  time_style: "color: yellow"
+
+reload:
+  widget_type: reload
+  title: "Oppdater"
+
+lights:
+    widget_type: navigate
+    title: Lys
+    icon_inactive: fa-lightbulb-o
+    dashboard: Lights
+
 weather:
   widget_type: yr
   entity: appdaemon.yr
@@ -16,9 +31,9 @@ ruter:
   entity: appdaemon.ruter
 
 layout:
-  - scene.hjemme, ruter(2x4)
-  - scene.natta
+  - clock(2x1), spacer(4x1), ruter(2x4)
+  - scene.pa
+  - scene.av
   - 
-  - 
-  - weather(6x1)
+  - lights, weather(6x1), reload
 
