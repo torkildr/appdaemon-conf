@@ -49,7 +49,7 @@ function baseyr(widget_id, url, skin, parameters) {
     
     var getWindAsset = function(speed, direction) {
         if (parseFloat(speed) <= 0.2) {
-            return 'vindstille';
+            return self.parameters.assets + '/w24/vindstille.png';
         }
         
         var speedAsset = zeroPad(intervalRounded(speed, 2.5) * 10, 4);

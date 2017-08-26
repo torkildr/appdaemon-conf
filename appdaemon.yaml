@@ -9,15 +9,15 @@ HASS:
 HADashboard:
   dash_url: http://simon.lan:5050
 
-#google_calendar:
-#  module: ical
-#  class: Calendar
-#  event: appdaemon.google_calendar
-#  feed: !secret gcal_feed
-#  interval: 30
-#  max_days: 14
-#  max_events: 10
-#
+google_calendar:
+  module: ical
+  class: Calendar
+  event: appdaemon.google_calendar
+  feed: !secret gcal_feed
+  interval: 30
+  max_days: 14
+  max_events: 10
+
 yr:
   module: yr
   class: Yr
@@ -25,16 +25,16 @@ yr:
   source: http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/varsel_time_for_time.xml
   interval: 30
 
-#bysykkel:
-#  module: bysykkel
-#  class: Bysykkel
-#  event: appdaemon.bysykkel
-#  interval: 5
-#  lat_min: !secret lat_min
-#  lat_max: !secret lat_max
-#  long_min: !secret long_min
-#  long_max: !secret long_max
-#
+bysykkel:
+  module: bysykkel
+  class: Bysykkel
+  event: appdaemon.bysykkel
+  interval: 5
+  lat_min: !secret lat_min
+  lat_max: !secret lat_max
+  long_min: !secret long_min
+  long_max: !secret long_max
+
 ruter:
   module: ruter
   class: Ruter
