@@ -26,13 +26,17 @@ weather:
   entity: appdaemon.yr
   assets: /images/custom/yr
 
+calendar:
+  widget_type: calendar
+  entity: appdaemon.google_calendar
+
 ruter:
   widget_type: transport
   entity: appdaemon.ruter
 
 layout:
   - clock(2x1), spacer(4x1), ruter(2x4)
-  - scene.pa
+  - scene.pa, spacer(1x1), calendar(4x2)
   - scene.av
   - 
   - lights, weather(6x1), reload

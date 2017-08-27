@@ -1,0 +1,11 @@
+widget_type: basecalendar
+entity: {{ entity }}
+fields:
+  events: ""
+parameters: []
+icons: []
+static_icons: []
+css: []
+static_css:
+  widget_style: "$background_style; padding: 0.5em;"
+
