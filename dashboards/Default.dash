@@ -2,7 +2,7 @@
 # Main arguments, all optional
 #
 title: Default
-widget_dimensions: [120, 114]
+widget_dimensions: [122, 114]
 widget_margins: [5, 5]
 columns: 8
 

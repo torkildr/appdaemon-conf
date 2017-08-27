@@ -2,20 +2,22 @@
 # Main arguments, all optional
 #
 title: Lights
-widget_dimensions: [120, 114]
+widget_dimensions: [164, 143]
 widget_margins: [5, 5]
-columns: 8
+columns: 6
 
 home:
-    widget_type: navigate
-    title: Home
-    icon_inactive: fa-home
-    dashboard: Default
+  widget_type: navigate
+  title: Home
+  icon_inactive: fa-home
+  dashboard: Default
+
+spacer:
+  widget_type: spacer
 
 layout:
-  - light.nuppelampa, light.spisestua_level, switch.vitrineskapet_switch, light.kjokken_level, light.stua_level, switch.vinduet_switch
+  - light.nuppelampa, light.spisestua_level, switch.vitrineskapet_switch
+  - light.kjokken_level, light.stua_level, switch.vinduet_switch
   - switch.gangen_switch, light.soverommet, light.gjesterommet
-  - 
-  - 
   - home
 
