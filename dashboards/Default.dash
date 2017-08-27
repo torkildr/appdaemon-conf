@@ -29,6 +29,7 @@ weather:
 calendar:
   widget_type: calendar
   entity: appdaemon.google_calendar
+  locale: "nb"
 
 ruter:
   widget_type: transport
@@ -36,7 +37,7 @@ ruter:
 
 layout:
   - clock(2x1), spacer(4x1), ruter(2x4)
-  - scene.pa, spacer(1x1), calendar(4x2)
+  - scene.pa, spacer(2x1), calendar(3x3)
   - scene.av
   - 
   - lights, weather(6x1), reload

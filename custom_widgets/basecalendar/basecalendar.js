@@ -2,33 +2,51 @@ function basecalendar(widget_id, url, skin, parameters) {
     var self = this;
     // the api should probably be changed so this isn't necessary
     self.parameters = parameters;
+    
+    var locale = (parameters.locale) ? parameters.locale : 'en';
+    moment.locale(locale);
 
+    // create shortest possible
     var humanizeDuration = function(beginDate, endDate) {
         var begin = moment(beginDate);
         var end = moment(endDate);
+
         var diff = moment.duration(end.diff(begin));
         var fromNow = moment.duration(end.diff(moment()));
+    
+        var dayFormat = "dddd";
+        var shortDateFormat = "D MMM";
 
-        var dateFormat = (fromNow.asDays() < 7) ? "ddd" : "ddd, D MMM";
+        var dateFormat = (fromNow.asDays() < 7) ? dayFormat : dayFormat + ", " + shortDateFormat;
         var hourFormat = "HH:mm";
         var dateAndHourFormat = dateFormat + ", " + hourFormat;
-        var separator = "\nto ";
 
+        // whole days
         if (diff.asHours() % 24 === 0) {
             if (diff.asHours() === 24) {
+                // one day
                 return begin.format(dateFormat);
             }
-            return begin.format(dateFormat) + separator + end.format(dateFormat);
+            // more days
+            return begin.format(dateFormat) + " →\n" + end.format(dateFormat);
         }
 
-        var format = (fromNow.asHours() < 24) ? hourFormat : dateAndHourFormat;
-
+        // no duration, only show the start time
         if (diff.asMinutes() === 0) {
-            return begin.format(format);
+            var format = (fromNow.asHours() < 24) ? hourFormat : dateAndHourFormat;
+            return begin.format(beginFormat);
         }
 
-        var endFormat = (diff.asHours() < 24) ? hourFormat : dateAndHourFormat;
-        return begin.format(format) + separator + end.format(endFormat);
+        // single day event 
+        if (diff.asHours() < 24) {
+            var period = begin.format(hourFormat) + " → " + end.format(hourFormat);
+            return begin.format(dateFormat) + "\n" + period;
+        }
+
+        // event streches over multiple days, with different times
+        dateFormat = (fromNow.asDays() > 7) ? dayFormat : shortDateFormat;
+        dateAndHourFormat = dateFormat + ", " + hourFormat;
+        return begin.format(dateAndHourFormat) + " →\n" + end.format(dateAndHourFormat);
     };
     
 

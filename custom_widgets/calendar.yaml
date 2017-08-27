@@ -1,5 +1,6 @@
 widget_type: basecalendar
 entity: {{ entity }}
+locale: {{ locale }}
 fields:
   events: ""
 parameters: []
