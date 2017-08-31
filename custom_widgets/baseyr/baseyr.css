@@ -115,6 +115,7 @@
 }
 
 .widget-baseyr-{{id}} .disclaimer {
+  display: none;
   position: absolute;
   bottom: -1em;
   right: 0.5em;
