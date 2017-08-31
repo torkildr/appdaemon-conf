@@ -15,6 +15,10 @@ reload:
   widget_type: reload
   title: "Oppdater"
 
+news:
+  widget_type: rss
+  entity: appdaemon.nrk
+
 lights:
     widget_type: navigate
     title: Lys

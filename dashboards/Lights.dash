@@ -16,8 +16,8 @@ spacer:
   widget_type: spacer
 
 layout:
-  - light.nuppelampa, light.spisestua_level, switch.vitrineskapet_switch
-  - light.kjokken_level, light.stua_level, switch.vinduet_switch
-  - switch.gangen_switch, light.soverommet, light.gjesterommet
+  - light.nuppelampa, light.spisestua_level, switch.vitrineskapet_switch, spacer(2x1), switch.gangen_switch
+  - light.kjokken_level, light.stua_level, switch.vinduet_switch, spacer(2x1), light.soverommet
+  - spacer(4x1), switch.plantelampa_switch, light.gjesterommet
   - home
 
