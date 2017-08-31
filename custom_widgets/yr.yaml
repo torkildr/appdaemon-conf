@@ -4,6 +4,7 @@ fields:
   symbols: ""
   hours: ""
   forecast: ""
+  disclaimer: ""
 parameters: []
 icons: []
 static_icons: []

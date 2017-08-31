@@ -2,6 +2,10 @@ AppDaemon:
   logfile: STDOUT
   errorfile: STDERR
   threads: 10
+  rss_feeds:
+    - feed: http://www.nrk.no/toppsaker.rss
+      target: appdaemon.nrk
+  rss_update: 30
 
 HASS:
   ha_url: http://localhost:8123
@@ -24,6 +28,7 @@ yr:
   event: appdaemon.yr
   source: http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/varsel_time_for_time.xml
   interval: 30
+  hours: 12
 
 bysykkel:
   module: bysykkel
@@ -50,10 +55,8 @@ monitor:
   module: eventMonitor
   class: Monitor
   events:
-    - appdaemon.bysykkel
+    - appdaemon.nrk
     - appdaemon.yr
-    - appdaemon.ruter
-    - appdaemon.google_calendar
 
 cache:
   module: eventCache

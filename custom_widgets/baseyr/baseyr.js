@@ -75,11 +75,13 @@ function baseyr(widget_id, url, skin, parameters) {
 
     // hook up callbacks and widget stuff
     self.onData = function(self, data) {
-        var forecast = data.attributes;
+        var forecast = data.attributes.forecast;
+        var disclaimer = data.attributes.disclaimer;
 
         self.set_field(self, 'symbols', symbols(forecast));
         self.set_field(self, 'hours', hours(forecast));
         self.set_field(self, 'forecast', forecast);
+        self.set_field(self, 'disclaimer', disclaimer);
     };
 
     var callbacks = [];
