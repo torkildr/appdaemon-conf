@@ -35,13 +35,13 @@
 .widget-basecalendar-{{id}} .name {
     font-weight: bold;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     overflow: hidden;
 }
 
 .widget-basecalendar-{{id}} .location {
     text-overflow: ellipsis;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     overflow: hidden;
 }
 

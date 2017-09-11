@@ -42,7 +42,7 @@ ruter:
 layout:
   - clock(2x1), spacer(4x1), ruter(2x4)
   - scene.pa, spacer(2x1), calendar(3x3)
-  - scene.av
-  - 
+  - scene.natta
+  - scene.helt_av
   - lights, weather(6x1), reload
 
