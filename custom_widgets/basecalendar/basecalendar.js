@@ -14,10 +14,10 @@ function basecalendar(widget_id, url, skin, parameters) {
         var diff = moment.duration(end.diff(begin));
         var fromNow = moment.duration(end.diff(moment()));
     
-        var dayFormat = "dddd Do";
+        var dayFormat = "dddd";
         var shortDateFormat = "D MMM";
 
-        var dateFormat = (fromNow.asDays() < 7) ? dayFormat : dayFormat + ", " + shortDateFormat;
+        var dateFormat = (fromNow.asDays() < 7) ? dayFormat + " Do" : dayFormat + ", " + shortDateFormat;
         var hourFormat = "HH:mm";
         var dateAndHourFormat = dateFormat + ", " + hourFormat;
 
