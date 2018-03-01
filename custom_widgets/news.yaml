@@ -1,0 +1,12 @@
+widget_type: basenews
+entity: {{ entity }}
+locale: {{ locale }}
+fields:
+  entries: []
+parameters: []
+icons: []
+static_icons: []
+css: []
+static_css:
+  widget_style: "$background_style; padding: 0.5em;"
+
