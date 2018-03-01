@@ -15,15 +15,11 @@ reload:
   widget_type: reload
   title: "Oppdater"
 
-news:
-  widget_type: rss
-  entity: appdaemon.nrk
-
 lights:
-    widget_type: navigate
-    title: Lys
-    icon_inactive: fa-lightbulb-o
-    dashboard: Lights
+  widget_type: navigate
+  title: Lys
+  icon_inactive: fa-lightbulb-o
+  dashboard: Lights
 
 weather:
   widget_type: yr
@@ -39,8 +35,28 @@ ruter:
   widget_type: transport
   entity: appdaemon.ruter
 
+habanero:
+  widget_type: plant
+  title: Habanero
+  entity: sensor.habanero_moisture
+
+cayenne:
+  widget_type: plant
+  title: Cayenne
+  entity: sensor.cayenne_moisture
+
+jalapeno:
+  widget_type: plant
+  title: Jalapeno 
+  entity: sensor.jalapeno_moisture
+
+thai:
+  widget_type: plant
+  title: Thai Chili
+  entity: sensor.thai_moisture
+
 layout:
-  - clock(2x1), spacer(4x1), ruter(2x4)
+  - clock(2x1), habanero, cayenne, jalapeno, thai, ruter(2x4)
   - scene.pa, spacer(2x1), calendar(3x3)
   - scene.natta
   - scene.helt_av
