@@ -5,6 +5,7 @@
 
   text-align: left !important;
   flex-direction: column;
+  overflow: auto;
 }
 
 .widget-basetransport-{{id}} .stop {
@@ -40,7 +41,6 @@
 }
 
 .widget-basetransport-{{id}} .platform {
-  display: flex;
   flex-direction: column;
 }
 

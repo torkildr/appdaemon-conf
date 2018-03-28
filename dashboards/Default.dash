@@ -62,7 +62,7 @@ thai:
 
 layout:
   - clock(2x1), habanero, cayenne, jalapeno, thai, ruter(2x4)
-  - scene.pa, spacer(2x3), calendar(3x3)
+  - scene.pa, news(2x3), calendar(3x3)
   - scene.natta
   - scene.helt_av
   - lights, weather(6x1), reload
