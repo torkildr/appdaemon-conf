@@ -1,0 +1,10 @@
+ruter:
+  module: ruter
+  class: Ruter
+  event: appdaemon.ruter
+  departures: 5
+  interval: 5
+  x_min: !secret x_min
+  x_max: !secret x_max
+  y_min: !secret y_min
+  y_max: !secret y_max

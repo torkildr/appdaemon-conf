@@ -1,0 +1,9 @@
+google_calendar:
+  module: ical
+  class: Calendar
+  event: appdaemon.google_calendar
+  feed: !secret gcal_feed
+  interval: 30
+  max_days: 14
+  max_events: 10
+

@@ -1,15 +1,18 @@
-AppDaemon:
+log:
   logfile: STDOUT
   errorfile: STDERR
-  threads: 10
+
+hadashboard:
+  dash_url: http://simon.lan:5050
   rss_feeds:
     - feed: http://www.nrk.no/toppsaker.rss
       target: appdaemon.nrk
   rss_update: 30
 
-HASS:
-  ha_url: http://localhost:8123
-
-HADashboard:
-  dash_url: http://simon.lan:5050
+appdaemon:
+  threads: 10
+  plugins:
+    HASS:
+      type: hass
+      ha_url: http://172.18.0.1:8123
 

@@ -1,4 +1,4 @@
-import appdaemon.appapi as appapi
+import appdaemon.plugins.hass.hassapi as hass
 import requests
 import json
 from datetime import datetime
@@ -14,7 +14,7 @@ Arguments:
  - x_min, x_max, y_min, y_max: Box coordinates for area to find stops in, in the UTM coordinate system
 
 """
-class Ruter(appapi.AppDaemon):
+class Ruter(hass.Hass):
     def initialize(self):
         self.apiUrl = "http://reisapi.ruter.no"
         self.departures = self.args['departures']
@@ -31,10 +31,7 @@ class Ruter(appapi.AppDaemon):
         
     def updateState(self, kwargs=None):
         departures = self.getDepartures()
-        self.set_app_state(self.entity, {
-            'state': "",
-            'attributes': departures
-        })
+        self.set_app_state(self.entity, state="", attributes=departures)
 
     def getDepartures(self):
         ruter = {}

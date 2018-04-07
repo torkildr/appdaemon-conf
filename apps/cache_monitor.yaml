@@ -1,0 +1,16 @@
+monitor:
+  module: eventMonitor
+  class: Monitor
+  events:
+    - appdaemon.nrk
+    - appdaemon.yr
+
+cache:
+  module: eventCache
+  class: Cache
+  cache: /conf/eventCache.json
+  events:
+    - appdaemon.bysykkel
+    - appdaemon.yr
+    - appdaemon.ruter
+    - appdaemon.google_calendar

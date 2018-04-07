@@ -1,4 +1,4 @@
-import appdaemon.appapi as appapi
+import appdaemon.plugins.hass.hassapi as hass
 import requests
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
@@ -18,7 +18,7 @@ Arguments:
 disclaimer = "Weather forecast from Yr, delivered by the Norwegian Meteorological Institute and NRK"
 user_agent = "HomeAssistant/Appdaemon Python/requests"
 
-class Yr(appapi.AppDaemon):
+class Yr(hass.Hass):
     def initialize(self):
         self.url = self.args['source']
         self.entity = self.args['event']
@@ -35,11 +35,7 @@ class Yr(appapi.AppDaemon):
 
     def updateState(self, kwargs):
         forecast = self.fetchForecast()
-        self.set_app_state(self.entity, {
-            'state': "",
-            'attributes': forecast
-        })
-        
+        self.set_app_state(self.entity, state="", attributes=forecast)
 
     def fetchData(self):
         res = requests.get(self.url, headers={ 'User-Agent': user_agent })

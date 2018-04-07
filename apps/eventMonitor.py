@@ -1,4 +1,4 @@
-import appdaemon.appapi as appapi
+import appdaemon.plugins.hass.hassapi as hass
 
 """
 
@@ -8,7 +8,7 @@ Arguments:
  - events: List of events to monitor
 
 """
-class Monitor(appapi.AppDaemon):
+class Monitor(hass.Hass):
     def initialize(self):
         events = self.args['events']
         
@@ -19,6 +19,6 @@ class Monitor(appapi.AppDaemon):
             self.listen_state(self.changed, event)
 
     def changed(self, entity, attribute, old, new, kwargs):
-        value = self.get_state(entity, 'all')
+        value = self.get_state(entity)
         self.log(entity + ': ' + str(value))
 

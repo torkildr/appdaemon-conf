@@ -52,7 +52,7 @@ function basecalendar(widget_id, url, skin, parameters) {
 
     // hook up callbacks and widget stuff
     self.onData = function(self, state) {
-        var events = state.attributes.map(function (event) {
+        var events = state.attributes.calendar_events.map(function (event) {
             return {
                 name: event.name,
                 location: event.location,

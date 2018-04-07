@@ -1,0 +1,7 @@
+yr:
+  module: yr
+  class: Yr
+  event: appdaemon.yr
+  source: http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/varsel_time_for_time.xml
+  interval: 30
+  hours: 12
