@@ -23,12 +23,12 @@ class Bysykkel(hass.Hass):
         self.run_every(self.updateState, now, interval * 60)
 
     def fetch(self, path):
-        res = requests.get(self.apiUrl + path)
+        res = requests.get('{}{}'.format(self.apiUrl, path))
         return json.loads(res.text)
         
     def updateState(self, kwargs=None):
-        status = self.getStatus()
-        self.set_app_state(self.entity, state="", attributes=status)
+        data = { 'status': self.getStatus() }
+        self.set_app_state(self.entity, state="", attributes=data)
 
     def getStatus(self):
         stations = self.fetch("/Place/GetCityBikeStations?latmin={lat_min}&latmax={lat_max}&longmin={long_min}&longmax={long_max}".format(**self.args))

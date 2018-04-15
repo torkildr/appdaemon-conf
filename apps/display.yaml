@@ -1,0 +1,5 @@
+monitor:
+  module: display
+  class: Display
+  host: !secret display_host
+
