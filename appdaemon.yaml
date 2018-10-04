@@ -14,5 +14,6 @@ appdaemon:
   plugins:
     HASS:
       type: hass
+      ha_key: !secret homeassistant_password
       ha_url: http://172.18.0.1:8123
 

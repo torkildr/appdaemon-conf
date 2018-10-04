@@ -24,10 +24,12 @@ class Display(hass.Hass):
         text = self.values['text']
         mode = self.values['mode']
 
+        self._post('/scroll', { 'arg': 'auto' })
+
         if mode == 'Text':
             self._post('/text', { 'text': text, 'time': True })
         if mode == 'Date':
-            self._post('/time', { 'format': '   %A, %b %-d %H:%M:%S' })
+            self._post('/time', { 'format': '  %A, %b %-d %H:%M:%S' })
 
     def initialize(self):
         self.values = {}

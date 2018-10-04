@@ -32,6 +32,10 @@ class Calendar(hass.Hass):
     def updateState(self, kwargs=None):
         self.log('loading data from ical feed')
         data = requests.get(self.feed).text
+
+        # hack to fix "Invalid alarm action"
+        data = data.replace('BEGIN:VALARM\r\nACTION:NONE','BEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:')
+
         ical = ics.Calendar(data)
         self.log('ical data loaded')
         
